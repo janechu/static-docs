@@ -1,0 +1,19 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "compilerOptions": {
+        "target": "ES6",
+        "baseUrl": "./",
+        "declaration": false,
+        "outDir": "dist/esm",
+        "resolveJsonModule": true,
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true
+    },
+    "exclude": [
+        "app",
+        "node_modules"
+    ]
+}

@@ -1,0 +1,16 @@
+/**
+ * Auto-generated file from build/generate-export-files.js
+ */
+const template = `<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title><%- projectTitle %></title>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%- githubUrl %>" />
+<meta property="og:image" content="image.png" />
+
+<link rel="icon" href="<%- baseUrl %>/favicon.ico" />
+<link rel="icon" href="<%- baseUrl %>/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="<%- baseUrl %>/apple-touch-icon.png" />
+`;
+export default template;
