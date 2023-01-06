@@ -528,14 +528,14 @@
 <pre><code class="language-js">import path from &quot;path&quot;;
 import { StaticDocs } from &quot;static-docs&quot;;
 
-const ghPagesBaseUrl = &quot;https://github.io/my-project&quot;;
+const ghPagesBaseUrl = &quot;https://username.github.io/my-project&quot;;
 const githubUrl = &quot;https://github.com/username/my-project&quot;;
 const __dirname = process.cwd();
 
 const staticDocs = new StaticDocs({
     root: path.resolve(__dirname),
-    docs: path.resolve(__dirname, &quot;docs&quot;),
-    target: path.resolve(__dirname, &quot;www&quot;),
+    docs: path.resolve(__dirname, &quot;docs-files&quot;),
+    target: path.resolve(__dirname, &quot;docs&quot;),
     sidebar: {
         links: [
             {
