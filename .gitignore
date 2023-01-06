@@ -10,4 +10,4 @@ node_modules/
 dist
 
 # Generated files
-www
+docs

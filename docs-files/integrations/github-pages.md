@@ -51,7 +51,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4.3.0
       with:
         branch: gh-pages # The branch the action should deploy to.
-        folder: www # The folder the action should deploy.
+        folder: docs # The folder the action should deploy.
 ```
 
 In this example we are assuming that the `generate:gh-pages` targets a node script that executes a configured `StaticDocs` instance which then uses the `generate` method to generate the HTML files necessary for the site. This is just an example, considering the following links for more information on how to integrate this into your projects workflow:

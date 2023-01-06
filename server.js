@@ -4,7 +4,7 @@ import http from "http";
 
 const __dirname = process.cwd();
 const app = express();
-const outDir = path.join(__dirname, "www");
+const outDir = path.join(__dirname, "docs");
 
 /**
  * This express file is only for development purposes, the

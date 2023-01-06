@@ -18,8 +18,8 @@ staticDocs.generate();
 | option | description | required | type | example |
 |-|-|-|-|-|
 |**root**| A path to the root of the project | yes | `string` | `path.resolve(__dirname)` |
-|**docs**| A path to the docs folder which contains the markdown files | yes | `string` | `path.resolve(__dirname, "docs")` |
-|**target**|The target path for the generated HTML files | yes | `string` | `path.resolve(__dirname, "www")` |
+|**docs**| A path to the docs folder which contains the markdown files | yes | `string` | `path.resolve(__dirname, "docs-files")` |
+|**target**|The target path for the generated HTML files | yes | `string` | `path.resolve(__dirname, "docs")` |
 |**projectTitle**| The title of the project | yes | `string` | `"My Project"` |
 |**baseUrl**| The base URL used for navigation, if your site exists at `https://www.example.com` this would be your base URL | yes | `string` | `"https://www.example.com"` |
 |**githubUrl**|At this time we are assuming your project is hosted on GitHub. This should be the link to your repository| yes | `string` |`"https://github.com/myusername/myprojectname"` |

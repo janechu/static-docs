@@ -253,7 +253,7 @@ export class StaticDocs {
         return new Promise((resolve, reject) => {
             this.getHTMLStringFromMarkdownPath(
                 path.resolve(this.docs, `${documentationItem.path}.md`),
-                documentationItem.path
+                path.resolve(this.target, "docs", documentationItem.path),
             )
                 .then(html => {
                     const versionAndPackageName = this.getDocumentVersionAndPackageName(

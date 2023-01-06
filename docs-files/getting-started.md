@@ -17,14 +17,14 @@ build/generate-docs.js
 import path from "path";
 import { StaticDocs } from "static-docs";
 
-const ghPagesBaseUrl = "https://github.io/my-project";
+const ghPagesBaseUrl = "https://username.github.io/my-project";
 const githubUrl = "https://github.com/username/my-project";
 const __dirname = process.cwd();
 
 const staticDocs = new StaticDocs({
     root: path.resolve(__dirname),
-    docs: path.resolve(__dirname, "docs"),
-    target: path.resolve(__dirname, "www"),
+    docs: path.resolve(__dirname, "docs-files"),
+    target: path.resolve(__dirname, "docs"),
     sidebar: {
         links: [
             {

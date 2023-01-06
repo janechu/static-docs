@@ -1,8 +1,8 @@
 import path from "path";
 import { StaticDocs } from "../dist/esm/index.js";
 import { ghPagesBaseUrl, githubUrl } from "./constants.js";
-import frontpageContent from "../docs/frontpage.js";
-import sidebar from "../docs/sidebar.js";
+import frontpageContent from "../docs-files/frontpage.js";
+import sidebar from "../docs-files/sidebar.js";
 
 const __dirname = process.cwd();
 const baseUrl = process.env.npm_lifecycle_event.includes("gh-pages")
@@ -11,8 +11,8 @@ const baseUrl = process.env.npm_lifecycle_event.includes("gh-pages")
 
 const staticDocs = new StaticDocs({
     root: path.resolve(__dirname),
-    docs: path.resolve(__dirname, "docs"),
-    target: path.resolve(__dirname, "www"),
+    docs: path.resolve(__dirname, "docs-files"),
+    target: path.resolve(__dirname, "docs"),
     projectTitle: "Static Docs",
     sidebar,
     baseUrl,
