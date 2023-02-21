@@ -17,7 +17,7 @@ const staticDocs = new StaticDocs({
     sidebar,
     baseUrl,
     githubUrl,
-    version: {
+    versions: {
         "static-docs": {
             versions: [
                 "0.x.0"

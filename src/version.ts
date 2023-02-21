@@ -2,7 +2,7 @@ interface Versions {
     /**
      * Available versions
      */
-    version: Array<string>;
+    versions: Array<string>;
 }
 
 export interface VersionConfig {

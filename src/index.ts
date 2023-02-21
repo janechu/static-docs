@@ -267,7 +267,7 @@ export class StaticDocs {
                             docVersion: versionAndPackageName.version,
                             otherAvailableVersions: this.versions[
                                 versionAndPackageName.package
-                            ].version
+                            ].versions
                                 .filter(value => {
                                     return value !== versionAndPackageName.version;
                                 })
