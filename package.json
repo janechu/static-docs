@@ -1,6 +1,6 @@
 {
   "name": "static-docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A static documentation site generator. Useful for integration with GitHub pages.",
   "main": "dist/esm/index.js",
   "type": "module",
@@ -10,7 +10,9 @@
     "generate:local": "node ./build/gh-pages.js",
     "generate:gh-pages": "node ./build/gh-pages.js",
     "generate:template": "node ./build/generate-export-files",
-    "test": "npm run build && npm run generate:local"
+    "test": "npm run build && npm run generate:local",
+    "test:diff": "git update-index --refresh && git diff-index --quiet HEAD -- || npm run test:diff:error",
+    "test:diff:error": "echo \"Untracked files exist, try running npm prepare to identify the culprit.\" && exit 1"
   },
   "repository": {
     "type": "git",
