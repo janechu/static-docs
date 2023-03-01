@@ -26,6 +26,7 @@ const template = `<header class="toolbar">
                         Docs
                     </a>
                 </li>
+                <% _.forEach(links, function(link) { %><li><a href="<%- link.href %>"><%- link.title %></a></li><% }); %>
             </ul>
         </div>
         <div class="section">

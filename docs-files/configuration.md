@@ -25,3 +25,4 @@ staticDocs.generate();
 |**githubUrl**|At this time we are assuming your project is hosted on GitHub. This should be the link to your repository| yes | `string` |`"https://github.com/myusername/myprojectname"` |
 |**frontpageContent**| The front page content is consumed as a string, this can be any HTML however | yes | `string` | `"<h1>My Project</h1><p>Welcome to the documentation site for my project.</p>` |
 |**sidebar**| The sidebar serves as both the navigation for your documentation and as a means of letting the `StaticDocs` instance know what files you would like included. Note that only one level of categories is permitted at this time as to not run into issues with nesting | yes | [`SideBarConfig`](https://github.com/janechu/static-docs/blob/main/src/sidebar.ts) | see type |
+|**toolbarLinks**| Any non-generated links from markdown | no | [`Array<ToolbarLink>`](https://github.com/janechu/static-docs/blob/main/src/index.ts) | see type |
