@@ -38,6 +38,18 @@ interface DocumentVersionAndPackageName {
     version: string;
 }
 
+interface ToolbarLink {
+    /**
+     * The href attribute
+     */
+    href: string;
+
+    /**
+     * The string used as content in the anchor content
+     */
+    title: string;
+}
+
 export interface StaticDocsConfig {
     /**
      * The root directory of the project
@@ -84,6 +96,11 @@ export interface StaticDocsConfig {
      * The content for the front page
      */
     frontpageContent: string;
+
+    /**
+     * Links for the toolbar
+     */
+    toolbarLinks?: Array<ToolbarLink>;
 }
 
 export class StaticDocs {
@@ -96,6 +113,7 @@ export class StaticDocs {
     private githubUrl: string;
     private projectTitle: string;
     private frontpageContent: string;
+    private toolbarLinks: Array<ToolbarLink>;
 
     constructor(config: StaticDocsConfig) {
         this.root = config.root;
@@ -107,6 +125,7 @@ export class StaticDocs {
         this.githubUrl = config.githubUrl;
         this.projectTitle = config.projectTitle;
         this.frontpageContent = config.frontpageContent;
+        this.toolbarLinks = config.toolbarLinks || [];
     }
 
     /**
@@ -136,6 +155,7 @@ export class StaticDocs {
                         projectTitle: this.projectTitle,
                         baseUrl: this.baseUrl,
                         githubUrl: this.githubUrl,
+                        links: this.toolbarLinks,
                     }),
                     content: this.frontpageContent,
                     footerTemplate: compiledFooterTemplate({
@@ -212,6 +232,7 @@ export class StaticDocs {
                 baseUrl: this.baseUrl,
                 githubUrl: this.githubUrl,
                 projectTitle: this.projectTitle,
+                links: this.toolbarLinks,
             }),
             footerTemplate: compiledFooterTemplate({
                 githubUrl: this.githubUrl
