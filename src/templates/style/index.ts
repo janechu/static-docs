@@ -168,7 +168,7 @@ const template = `<style>
         margin: 0 25px 0 5px;
     }
 
-    main > div {
+    main > .container {
         padding: 25px;
     }
 
