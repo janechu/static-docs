@@ -100,6 +100,7 @@ const template = `<style>
         border-right: 1px solid var(--sidebar-border-color);
         min-height: calc(100vh - var(--toolbar-height) - var(--footer-height) - 30px);
         overflow: auto;
+        padding: 0;
     }
 
     .sidebar nav {
@@ -168,7 +169,7 @@ const template = `<style>
         margin: 0 25px 0 5px;
     }
 
-    main > div {
+    main > .container {
         padding: 25px;
     }
 
