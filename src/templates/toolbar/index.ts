@@ -1,10 +1,10 @@
 /**
  * Auto-generated file from build/generate-export-files.js
  */
-const template = `<header class="toolbar">
+const template = `<header class="sd-toolbar">
     <nav>
-        <div class="section">
-            <button id="mobileOpen" class="mobile-toggle">
+        <div class="sd-section">
+            <button id="mobileOpen" class="sd-mobile-toggle">
                 <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
                     <path
                         stroke="currentColor"
@@ -29,14 +29,14 @@ const template = `<header class="toolbar">
                 <% _.forEach(links, function(link) { %><li><a href="<%- link.href %>"><%- link.title %></a></li><% }); %>
             </ul>
         </div>
-        <div class="section">
+        <div class="sd-section">
             <ul>
                 <li>
                     <a href="<%- githubUrl %>" target="_blank">
                         <span>GitHub</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-github"
+                            class="sd-icon sd-icon-github"
                             viewBox="0 0 19 20"
                         >
                             <path
@@ -53,7 +53,7 @@ const template = `<header class="toolbar">
         mobileOpenButton.addEventListener("mousedown", e => {
             e.preventDefault();
 
-            document.body.classList.add("active-mobile-sidebar");
+            document.body.classList.add("sd-active-mobile-sidebar");
         });
     </script>
 </header>

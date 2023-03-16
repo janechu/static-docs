@@ -8,13 +8,13 @@ const template = `<!DOCTYPE html>
         <%= metaTemplate %> <%=
         styleTemplate %>
     </head>
-    <body>
-        <div class="mobile-overlay"></div>
+    <body class="static-docs">
+        <div class="sd-mobile-overlay"></div>
         <div>
             <%= toolbarTemplate %>
             <main>
-                <div class="container">
-                    <div class="content"><%= content %></div>
+                <div class="sd-container">
+                    <div class="sd-content"><%= content %></div>
                 </div>
             </main>
         </div>

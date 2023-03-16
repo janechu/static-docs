@@ -2,7 +2,7 @@
  * Auto-generated file from build/generate-export-files.js
  */
 const template = `<footer>
-    <div class="links">
+    <div class="sd-links">
         <div>
             <h3>Social</h3>
             <ul>

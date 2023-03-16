@@ -3,7 +3,7 @@
  */
 const template = `<h1><%- label %></h1>
 <p><%- description %></p>
-<ul class="category">
+<ul class="sd-category">
     <% _.forEach(items, function(item) { %>
     <li><a href="<%- baseUrl %>/docs/<%- item.path %>"><%- item.label %></a></li>
     <% }); %>
