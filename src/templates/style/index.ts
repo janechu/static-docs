@@ -9,48 +9,48 @@ const template = `<style>
     }
 
     body {
-        --link-color: #ebedf0;
-        --accent-link-color: #fb356d;
-        --font-color: #f5f6f7;
-        --font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+        --sd-link-color: #ebedf0;
+        --sd-accent-link-color: #fb356d;
+        --sd-font-color: #f5f6f7;
+        --sd-font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
             Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
             sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        --background-color-layer-1: #18191a;
-        --background-color-layer-2: #242526;
-        --background-color-layer-3: hsla(0, 0%, 100%, 0.05);
-        --footer-background-color: #303846;
-        --footer-color: #ebefd0;
-        --footer-height: 220px;
-        --spacing-vertical: 20px;
-        --table-background: transparent;
-        --table-border-width: 1px;
-        --table-border-color: #606770;
-        --table-head-background: inherit;
-        --table-head-color: inherit;
-        --table-head-font-weight: 700;
-        --table-cell-padding: 10px;
-        --sidebar-border-color: #606770;
-        --sidebar-width: 300px;
-        --sidebar-link-active-background-color: var(--background-color-layer-3);
-        --sidebar-background-color: var(--background-color-layer-2);
-        --toolbar-background-color: var(--background-color-layer-2);
-        --toolbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-        --toolbar-height: 60px;
-        --category-border-color: #444950;
-        --category-background-color: var(--background-color-layer-2);
-        --category-border-radius: 10px;
-        --table-caption-background-color: var(--background-color-layer-3);
-        --code-background: #333437;
-        --code-border-radius: 6px;
-        --code-block-background: rgb(41, 45, 62);
+        --sd-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --sd-background-color-layer-1: #18191a;
+        --sd-background-color-layer-2: #242526;
+        --sd-background-color-layer-3: hsla(0, 0%, 100%, 0.05);
+        --sd-footer-background-color: #303846;
+        --sd-footer-color: #ebefd0;
+        --sd-footer-height: 220px;
+        --sd-spacing-vertical: 20px;
+        --sd-table-background: transparent;
+        --sd-table-border-width: 1px;
+        --sd-table-border-color: #606770;
+        --sd-table-head-background: inherit;
+        --sd-table-head-color: inherit;
+        --sd-table-head-font-weight: 700;
+        --sd-table-cell-padding: 10px;
+        --sd-sidebar-border-color: #606770;
+        --sd-sidebar-width: 300px;
+        --sd-sidebar-link-active-background-color: var(--sd-background-color-layer-3);
+        --sd-sidebar-background-color: var(--sd-background-color-layer-2);
+        --sd-toolbar-background-color: var(--sd-background-color-layer-2);
+        --sd-toolbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+        --sd-toolbar-height: 60px;
+        --sd-category-border-color: #444950;
+        --sd-category-background-color: var(--sd-background-color-layer-2);
+        --sd-category-border-radius: 10px;
+        --sd-table-caption-background-color: var(--sd-background-color-layer-3);
+        --sd-code-background: #333437;
+        --sd-code-border-radius: 6px;
+        --sd-code-block-background: rgb(41, 45, 62);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-        background: var(--background-color-layer-1);
-        color: var(--font-color);
-        font-family: var(--font-family);
+        background: var(--sd-background-color-layer-1);
+        color: var(--sd-font-color);
+        font-family: var(--sd-font-family);
     }
 
     p {
@@ -69,10 +69,10 @@ const template = `<style>
 
     header nav {
         display: flex;
-        height: var(--toolbar-height);
+        height: var(--sd-toolbar-height);
         justify-content: space-between;
-        background-color: var(--toolbar-background-color);
-        box-shadow: var(--toolbar-shadow);
+        background-color: var(--sd-toolbar-background-color);
+        box-shadow: var(--sd-toolbar-shadow);
     }
 
     header nav ul {
@@ -87,18 +87,18 @@ const template = `<style>
     .icon {
         height: 20px;
         width: 18px;
-        fill: var(--link-color);
+        fill: var(--sd-link-color);
     }
 
     a:hover .icon {
-        fill: var(--accent-link-color);
+        fill: var(--sd-accent-link-color);
     }
 
     .sidebar {
-        width: var(--sidebar-width);
-        min-width: var(--sidebar-width);
-        border-right: 1px solid var(--sidebar-border-color);
-        min-height: calc(100vh - var(--toolbar-height) - var(--footer-height) - 30px);
+        width: var(--sd-sidebar-width);
+        min-width: var(--sd-sidebar-width);
+        border-right: 1px solid var(--sd-sidebar-border-color);
+        min-height: calc(100vh - var(--sd-toolbar-height) - var(--sd-footer-height) - 30px);
         overflow: auto;
     }
 
@@ -116,15 +116,15 @@ const template = `<style>
         flex: 1;
         padding: 10px 15px;
         border-radius: 5px;
-        color: var(--link-color);
+        color: var(--sd-link-color);
     }
 
     .sidebar .active {
-        background: var(--sidebar-link-active-background-color);
+        background: var(--sd-sidebar-link-active-background-color);
     }
 
     .category {
-        margin: var(--spacing-vertical) 0;
+        margin: var(--sd-spacing-vertical) 0;
         padding: 0;
         display: flex;
         row-gap: 15px;
@@ -133,16 +133,16 @@ const template = `<style>
     }
 
     .category li {
-        border: 1px solid var(--category-border-color);
-        background: var(--category-background-color);
+        border: 1px solid var(--sd-category-border-color);
+        background: var(--sd-category-background-color);
         box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
         padding: 20px;
-        border-radius: var(--category-border-radius);
+        border-radius: var(--sd-category-border-radius);
         width: 200px;
     }
 
     .category li a {
-        color: var(--link-color);
+        color: var(--sd-link-color);
     }
 
     .category a,
@@ -155,12 +155,12 @@ const template = `<style>
     }
 
     a {
-        color: var(--link-color);
+        color: var(--sd-link-color);
         text-decoration: none;
     }
 
     a:hover {
-        color: var(--accent-link-color);
+        color: var(--sd-accent-link-color);
     }
 
     main {
@@ -173,7 +173,7 @@ const template = `<style>
     }
 
     main div a {
-        color: var(--accent-link-color);
+        color: var(--sd-accent-link-color);
     }
 
     main ul {
@@ -190,7 +190,7 @@ const template = `<style>
     }
 
     .frontpage {
-        margin: var(--spacing-vertical);
+        margin: var(--sd-spacing-vertical);
     }
 
     .card-container {
@@ -203,7 +203,7 @@ const template = `<style>
     }
 
     .card {
-        background: var(--background-color-layer-3);
+        background: var(--sd-background-color-layer-3);
         border-radius: 5px;
         padding: 0 20px;
         width: 300px;
@@ -238,7 +238,7 @@ const template = `<style>
     }
 
     h1 {
-        margin: var(--spacing-vertical) 0;
+        margin: var(--sd-spacing-vertical) 0;
     }
 
     footer {
@@ -247,9 +247,9 @@ const template = `<style>
         justify-content: space-between;
         row-gap: 15px;
         padding: 15px;
-        min-height: var(--footer-height);
-        background-color: var(--footer-background-color);
-        color: var(--footer-color);
+        min-height: var(--sd-footer-height);
+        background-color: var(--sd-footer-background-color);
+        color: var(--sd-footer-color);
     }
 
     footer .links {
@@ -271,7 +271,7 @@ const template = `<style>
     table {
         border-collapse: collapse;
         display: block;
-        margin: var(--spacing-vertical) 0;
+        margin: var(--sd-spacing-vertical) 0;
         overflow: auto;
         box-sizing: border-box;
     }
@@ -279,43 +279,43 @@ const template = `<style>
     table caption {
         display: inline-block;
         margin-block-end: 15px;
-        background: var(--table-caption-background-color);
+        background: var(--sd-table-caption-background-color);
         border-radius: 4px;
         padding: 5px 10px;
     }
 
     table thead tr {
-        border-bottom: 2px solid var(--table-border-color);
+        border-bottom: 2px solid var(--sd-table-border-color);
     }
 
     table tr {
-        background-color: var(--table-background);
-        border-top: var(--table-border-width) solid var(--table-border-color);
+        background-color: var(--sd-table-background);
+        border-top: var(--sd-table-border-width) solid var(--sd-table-border-color);
     }
 
     table th {
-        background-color: var(--table-head-background);
-        color: var(--table-head-color);
-        font-weight: var(--table-head-font-weight);
+        background-color: var(--sd-table-head-background);
+        color: var(--sd-table-head-color);
+        font-weight: var(--sd-table-head-font-weight);
     }
 
     table td,
     table th {
-        border: var(--table-border-width) solid var(--table-border-color);
-        padding: var(--table-cell-padding);
+        border: var(--sd-table-border-width) solid var(--sd-table-border-color);
+        padding: var(--sd-table-cell-padding);
     }
 
     pre code {
         display: block;
         padding: 16px;
-        background-color: var(--code-block-background);
+        background-color: var(--sd-code-block-background);
     }
 
     code {
-        background-color: var(--code-background);
+        background-color: var(--sd-code-background);
         border: .1rem solid rgba(0,0,0,.1);
-        border-radius: var(--code-border-radius);
-        font-family: var(--font-family-monospace);
+        border-radius: var(--sd-code-border-radius);
+        font-family: var(--sd-font-family-monospace);
         padding: 2px;
     }
 
@@ -331,7 +331,7 @@ const template = `<style>
         }
 
         .sidebar {
-            margin-inline-start: calc((-1 * var(--sidebar-width)) - 6px);
+            margin-inline-start: calc((-1 * var(--sd-sidebar-width)) - 6px);
         }
 
         .active-mobile-sidebar .sidebar {
@@ -339,7 +339,7 @@ const template = `<style>
             padding-inline-start: 5px;
             position: absolute;
             top: 0;
-            background: var(--sidebar-background-color);
+            background: var(--sd-sidebar-background-color);
             height: 100vh;
             z-index: 1;
         }
