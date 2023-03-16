@@ -1,10 +1,10 @@
 /**
  * Auto-generated file from build/generate-export-files.js
  */
-const template = `<div class="sidebar">
-    <div class="mobile-control">
+const template = `<div class="sd-sidebar">
+    <div class="sd-mobile-control">
         <span><%- projectTitle %></span>
-        <button id="mobileClose" class="mobile-toggle">
+        <button id="mobileClose" class="sd-mobile-toggle">
             <svg viewBox="0 0 15 15" width="21" height="21">
                 <g stroke="#ccd0d5" stroke-width="1.2">
                     <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
@@ -17,7 +17,7 @@ const template = `<div class="sidebar">
             <% _.forEach(sidebar.links, function(documentationItem) { %>
             <li>
                 <a
-                    class="<%- documentationItem.path === currentPath ? 'active' : '' %>"
+                    class="<%- documentationItem.path === currentPath ? 'sd-active' : '' %>"
                     href="<%- baseUrl %>/docs/<%- documentationItem.path %>"
                 >
                     <%- documentationItem.label %>
@@ -27,7 +27,7 @@ const template = `<div class="sidebar">
                     <% _.forEach(documentationItem.items, function(categoryItem) { %>
                     <li>
                         <a
-                            class="<%- categoryItem.path === currentPath ? 'active' : '' %>"
+                            class="<%- categoryItem.path === currentPath ? 'sd-active' : '' %>"
                             href="<%- baseUrl %>/docs/<%- categoryItem.path %>"
                         >
                             <%- categoryItem.label %>
@@ -45,7 +45,7 @@ const template = `<div class="sidebar">
         mobileCloseButton.addEventListener("mousedown", e => {
             e.preventDefault();
 
-            document.body.classList.remove("active-mobile-sidebar");
+            document.body.classList.remove("sd-active-mobile-sidebar");
         });
     </script>
 </div>`;
