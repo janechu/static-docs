@@ -9,48 +9,48 @@ const template = `<style>
     }
 
     .static-docs {
-        --sd-link-color: #ebedf0;
-        --sd-accent-link-color: #fb356d;
-        --sd-font-color: #f5f6f7;
-        --sd-font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+        <%- sdLinkColor %>: #ebedf0;
+        <%- sdAccentLinkColor %>: #fb356d;
+        <%- sdFontColor %>: #f5f6f7;
+        <%- sdFontFamily %>: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
             Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
             sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        --sd-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        --sd-background-color-layer-1: #18191a;
-        --sd-background-color-layer-2: #242526;
-        --sd-background-color-layer-3: hsla(0, 0%, 100%, 0.sd-05);
-        --sd-footer-background-color: #303846;
-        --sd-footer-color: #ebefd0;
-        --sd-footer-height: 220px;
-        --sd-spacing-vertical: 20px;
-        --sd-table-background: transparent;
-        --sd-table-border-width: 1px;
-        --sd-table-border-color: #606770;
-        --sd-table-head-background: inherit;
-        --sd-table-head-color: inherit;
-        --sd-table-head-font-weight: 700;
-        --sd-table-cell-padding: 10px;
-        --sd-sidebar-border-color: #606770;
-        --sd-sidebar-width: 300px;
-        --sd-sidebar-link-active-background-color: var(--sd-background-color-layer-3);
-        --sd-sidebar-background-color: var(--sd-background-color-layer-2);
-        --sd-toolbar-background-color: var(--sd-background-color-layer-2);
-        --sd-toolbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.sd-1);
-        --sd-toolbar-height: 60px;
-        --sd-category-border-color: #444950;
-        --sd-category-background-color: var(--sd-background-color-layer-2);
-        --sd-category-border-radius: 10px;
-        --sd-table-caption-background-color: var(--sd-background-color-layer-3);
-        --sd-code-background: #333437;
-        --sd-code-border-radius: 6px;
-        --sd-code-block-background: rgb(41, 45, 62);
+        <%- sdFontFamilyMonospace %>: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        <%- sdBackgroundColorLayer1 %>: #18191a;
+        <%- sdBackgroundColorLayer2 %>: #242526;
+        <%- sdBackgroundColorLayer3 %>: hsla(0, 0%, 100%, 0.sd-05);
+        <%- sdFooterBackgroundColor %>: #303846;
+        <%- sdFooterColor %>: #ebefd0;
+        <%- sdFooterHeight %>: 220px;
+        <%- sdSpacingVertical %>: 20px;
+        <%- sdTableBackground %>: transparent;
+        <%- sdTableBorderWidth %>: 1px;
+        <%- sdTableBorderColor %>: #606770;
+        <%- sdTableHeadBackground %>: inherit;
+        <%- sdTableHeadColor %>: inherit;
+        <%- sdTableHeadFontWeight %>: 700;
+        <%- sdTableCellPadding %>: 10px;
+        <%- sdSidebarBorderColor %>: #606770;
+        <%- sdSidebarWidth %>: 300px;
+        <%- sdSidebarLinkActiveBackgroundColor %>: var(<%- sdBackgroundColorLayer3 %>);
+        <%- sdSidebarBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
+        <%- sdToolbarBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
+        <%- sdToolbarShadow %>: 0 1px 2px 0 rgba(0, 0, 0, 0.sd-1);
+        <%- sdToolbarHeight %>: 60px;
+        <%- sdCategoryBorderColor %>: #444950;
+        <%- sdCategoryBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
+        <%- sdCategoryBorderRadius %>: 10px;
+        <%- sdTableCaptionBackgroundColor %>: var(<%- sdBackgroundColorLayer3 %>);
+        <%- sdCodeBackground %>: #333437;
+        <%- sdCodeBorderRadius %>: 6px;
+        <%- sdCodeBlockBackground %>: rgb(41, 45, 62);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-        background: var(--sd-background-color-layer-1);
-        color: var(--sd-font-color);
-        font-family: var(--sd-font-family);
+        background: var(<%- sdBackgroundColorLayer1 %>);
+        color: var(<%- sdFontColor %>);
+        font-family: var(<%- sdFontFamily %>);
     }
 
     .static-docs p {
@@ -69,10 +69,10 @@ const template = `<style>
 
     .static-docs header nav {
         display: flex;
-        height: var(--sd-toolbar-height);
+        height: var(<%- sdToolbarHeight %>);
         justify-content: space-between;
-        background-color: var(--sd-toolbar-background-color);
-        box-shadow: var(--sd-toolbar-shadow);
+        background-color: var(<%- sdToolbarBackgroundColor %>);
+        box-shadow: var(<%- sdToolbarShadow %>);
     }
 
     .static-docs header nav ul {
@@ -87,18 +87,18 @@ const template = `<style>
     .sd-icon {
         height: 20px;
         width: 18px;
-        fill: var(--sd-link-color);
+        fill: var(<%- sdLinkColor %>);
     }
 
     .static-docs a:hover .sd-icon {
-        fill: var(--sd-accent-link-color);
+        fill: var(<%- sdAccentLinkColor %>);
     }
 
     .sd-sidebar {
-        width: var(--sd-sidebar-width);
-        min-width: var(--sd-sidebar-width);
-        border-right: 1px solid var(--sd-sidebar-border-color);
-        min-height: calc(100vh - var(--sd-toolbar-height) - var(--sd-footer-height) - 30px);
+        width: var(<%- sdSidebarWidth %>);
+        min-width: var(<%- sdSidebarWidth %>);
+        border-right: 1px solid var(<%- sdSidebarBorderColor %>);
+        min-height: calc(100vh - var(<%- sdToolbarHeight %>) - var(<%- sdFooterHeight %>) - 30px);
         overflow: auto;
     }
 
@@ -116,15 +116,15 @@ const template = `<style>
         flex: 1;
         padding: 10px 15px;
         border-radius: 5px;
-        color: var(--sd-link-color);
+        color: var(<%- sdLinkColor %>);
     }
 
     .sd-sidebar .sd-active {
-        background: var(--sd-sidebar-link-active-background-color);
+        background: var(<%- sdSidebarLinkActiveBackgroundColor %>);
     }
 
     .sd-category {
-        margin: var(--sd-spacing-vertical) 0;
+        margin: var(<%- sdSpacingVertical %>) 0;
         padding: 0;
         display: flex;
         row-gap: 15px;
@@ -133,16 +133,16 @@ const template = `<style>
     }
 
     .sd-category li {
-        border: 1px solid var(--sd-category-border-color);
-        background: var(--sd-category-background-color);
+        border: 1px solid var(<%- sdCategoryBorderColor %>);
+        background: var(<%- sdCategoryBackgroundColor %>);
         box-shadow: 0 1.sd-5px 3px 0 rgb(0 0 0 / 15%);
         padding: 20px;
-        border-radius: var(--sd-category-border-radius);
+        border-radius: var(<%- sdCategoryBorderRadius %>);
         width: 200px;
     }
 
     .sd-category li a {
-        color: var(--sd-link-color);
+        color: var(<%- sdLinkColor %>);
     }
 
     .sd-category a,
@@ -155,12 +155,12 @@ const template = `<style>
     }
 
     .static-docs a {
-        color: var(--sd-link-color);
+        color: var(<%- sdLinkColor %>);
         text-decoration: none;
     }
 
     .static-docs a:hover {
-        color: var(--sd-accent-link-color);
+        color: var(<%- sdAccentLinkColor %>);
     }
 
     .static-docs main {
@@ -173,7 +173,7 @@ const template = `<style>
     }
 
     .static-docs main div a {
-        color: var(--sd-accent-link-color);
+        color: var(<%- sdAccentLinkColor %>);
     }
 
     .static-docs main ul {
@@ -190,7 +190,7 @@ const template = `<style>
     }
 
     .sd-frontpage {
-        margin: var(--sd-spacing-vertical);
+        margin: var(<%- sdSpacingVertical %>);
     }
 
     .sd-card-container {
@@ -203,7 +203,7 @@ const template = `<style>
     }
 
     .sd-card {
-        background: var(--sd-background-color-layer-3);
+        background: var(<%- sdBackgroundColorLayer3 %>);
         border-radius: 5px;
         padding: 0 20px;
         width: 300px;
@@ -238,7 +238,7 @@ const template = `<style>
     }
 
     .static-docs h1 {
-        margin: var(--sd-spacing-vertical) 0;
+        margin: var(<%- sdSpacingVertical %>) 0;
     }
 
     .static-docs footer {
@@ -247,9 +247,9 @@ const template = `<style>
         justify-content: space-between;
         row-gap: 15px;
         padding: 15px;
-        min-height: var(--sd-footer-height);
-        background-color: var(--sd-footer-background-color);
-        color: var(--sd-footer-color);
+        min-height: var(<%- sdFooterHeight %>);
+        background-color: var(<%- sdFooterBackgroundColor %>);
+        color: var(<%- sdFooterColor %>);
     }
 
     .static-docs footer .sd-links {
@@ -271,7 +271,7 @@ const template = `<style>
     .static-docs table {
         border-collapse: collapse;
         display: block;
-        margin: var(--sd-spacing-vertical) 0;
+        margin: var(<%- sdSpacingVertical %>) 0;
         overflow: auto;
         box-sizing: border-box;
     }
@@ -279,43 +279,43 @@ const template = `<style>
     .static-docs table caption {
         display: inline-block;
         margin-block-end: 15px;
-        background: var(--sd-table-caption-background-color);
+        background: var(<%- sdTableCaptionBackgroundColor %>);
         border-radius: 4px;
         padding: 5px 10px;
     }
 
     .static-docs table thead tr {
-        border-bottom: 2px solid var(--sd-table-border-color);
+        border-bottom: 2px solid var(<%- sdTableBorderColor %>);
     }
 
     .static-docs table tr {
-        background-color: var(--sd-table-background);
-        border-top: var(--sd-table-border-width) solid var(--sd-table-border-color);
+        background-color: var(<%- sdTableBackground %>);
+        border-top: var(<%- sdTableBorderWidth %>) solid var(<%- sdTableBorderColor %>);
     }
 
     .static-docs table th {
-        background-color: var(--sd-table-head-background);
-        color: var(--sd-table-head-color);
-        font-weight: var(--sd-table-head-font-weight);
+        background-color: var(<%- sdTableHeadBackground %>);
+        color: var(<%- sdTableHeadColor %>);
+        font-weight: var(<%- sdTableHeadFontWeight %>);
     }
 
     .static-docs table td,
     .static-docs table th {
-        border: var(--sd-table-border-width) solid var(--sd-table-border-color);
-        padding: var(--sd-table-cell-padding);
+        border: var(<%- sdTableBorderWidth %>) solid var(<%- sdTableBorderColor %>);
+        padding: var(<%- sdTableCellPadding %>);
     }
 
     .static-docs pre code {
         display: block;
         padding: 16px;
-        background-color: var(--sd-code-block-background);
+        background-color: var(<%- sdCodeBlockBackground %>);
     }
 
     .static-docs code {
-        background-color: var(--sd-code-background);
+        background-color: var(<%- sdCodeBackground %>);
         border: .1rem solid rgba(0,0,0,.1);
-        border-radius: var(--sd-code-border-radius);
-        font-family: var(--sd-font-family-monospace);
+        border-radius: var(<%- sdCodeBorderRadius %>);
+        font-family: var(<%- sdFontFamilyMonospace %>);
         padding: 2px;
     }
 
@@ -331,7 +331,7 @@ const template = `<style>
         }
 
         .sd-sidebar {
-            margin-inline-start: calc((-1 * var(--sd-sidebar-width)) - 6px);
+            margin-inline-start: calc((-1 * var(<%- sdSidebarWidth %>)) - 6px);
         }
 
         .sd-active-mobile-sidebar .sd-sidebar {
@@ -339,7 +339,7 @@ const template = `<style>
             padding-inline-start: 5px;
             position: absolute;
             top: 0;
-            background: var(--sd-sidebar-background-color);
+            background: var(<%- sdSidebarBackgroundColor %>);
             height: 100vh;
             z-index: 1;
         }
@@ -362,3 +362,39 @@ const template = `<style>
 </style>
 `;
 export default template;
+const templateVariables = {
+    sdSidebarLinkActiveBackgroundColor: "--sd-sidebar-link-active-background-color",
+    sdTableCaptionBackgroundColor: "--sd-table-caption-background-color",
+    sdCategoryBackgroundColor: "--sd-category-background-color",
+    sdBackgroundColorLayer1: "--sd-background-color-layer-1",
+    sdBackgroundColorLayer2: "--sd-background-color-layer-2",
+    sdBackgroundColorLayer3: "--sd-background-color-layer-3",
+    sdSidebarBackgroundColor: "--sd-sidebar-background-color",
+    sdToolbarBackgroundColor: "--sd-toolbar-background-color",
+    sdFooterBackgroundColor: "--sd-footer-background-color",
+    sdTableHeadFontWeight: "--sd-table-head-font-weight",
+    sdCategoryBorderRadius: "--sd-category-border-radius",
+    sdFontFamilyMonospace: "--sd-font-family-monospace",
+    sdTableHeadBackground: "--sd-table-head-background",
+    sdCategoryBorderColor: "--sd-category-border-color",
+    sdCodeBlockBackground: "--sd-code-block-background",
+    sdSidebarBorderColor: "--sd-sidebar-border-color",
+    sdTableBorderWidth: "--sd-table-border-width",
+    sdTableBorderColor: "--sd-table-border-color",
+    sdTableCellPadding: "--sd-table-cell-padding",
+    sdCodeBorderRadius: "--sd-code-border-radius",
+    sdAccentLinkColor: "--sd-accent-link-color",
+    sdSpacingVertical: "--sd-spacing-vertical",
+    sdTableBackground: "--sd-table-background",
+    sdTableHeadColor: "--sd-table-head-color",
+    sdCodeBackground: "--sd-code-background",
+    sdToolbarShadow: "--sd-toolbar-shadow",
+    sdToolbarHeight: "--sd-toolbar-height",
+    sdFooterHeight: "--sd-footer-height",
+    sdSidebarWidth: "--sd-sidebar-width",
+    sdFooterColor: "--sd-footer-color",
+    sdFontFamily: "--sd-font-family",
+    sdLinkColor: "--sd-link-color",
+    sdFontColor: "--sd-font-color",
+};
+ export { templateVariables };

@@ -8,7 +8,7 @@ import { DocumentLink, Links, SideBarConfig } from "./sidebar.js";
 import { VersionConfig } from "./version.js";
 import toolbarTemplate from "./templates/toolbar/index.js";
 import footerTemplate from "./templates/footer/index.js";
-import styleTemplate from "./templates/style/index.js";
+import styleTemplate, { templateVariables as styleTemplateVariables} from "./templates/style/index.js";
 import metaTemplate from "./templates/meta/index.js";
 import categoryTemplate from "./templates/category/index.js";
 import frontpageTemplate from "./templates/frontpage/index.js";
@@ -150,7 +150,9 @@ export class StaticDocs {
                         baseUrl: this.baseUrl,
                         githubUrl: this.githubUrl,
                     }),
-                    styleTemplate: compiledStyleTemplate(),
+                    styleTemplate: compiledStyleTemplate(
+                        styleTemplateVariables
+                    ),
                     toolbarTemplate: compiledToolbarTemplate({
                         projectTitle: this.projectTitle,
                         baseUrl: this.baseUrl,
@@ -237,7 +239,9 @@ export class StaticDocs {
             footerTemplate: compiledFooterTemplate({
                 githubUrl: this.githubUrl
             }),
-            styleTemplate: compiledStyleTemplate(),
+            styleTemplate: compiledStyleTemplate(
+                styleTemplateVariables
+            ),
             metaTemplate: compiledMetaTemplate({
                 baseUrl: this.baseUrl,
                 githubUrl: this.githubUrl,
