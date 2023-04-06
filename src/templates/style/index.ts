@@ -397,4 +397,5 @@ const templateVariables = {
     sdLinkColor: "--sd-link-color",
     sdFontColor: "--sd-font-color",
 };
- export { templateVariables };
+type TemplateVariables = typeof templateVariables;
+export { templateVariables, TemplateVariables };
