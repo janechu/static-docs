@@ -30,7 +30,7 @@
         --sd-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         --sd-background-color-layer-1: #18191a;
         --sd-background-color-layer-2: #242526;
-        --sd-background-color-layer-3: hsla(0, 0%, 100%, 0.sd-05);
+        --sd-background-color-layer-3: hsla(0, 0%, 100%, 0.05);
         --sd-footer-background-color: #303846;
         --sd-footer-color: #ebefd0;
         --sd-footer-height: 220px;
@@ -47,7 +47,7 @@
         --sd-sidebar-link-active-background-color: var(--sd-background-color-layer-3);
         --sd-sidebar-background-color: var(--sd-background-color-layer-2);
         --sd-toolbar-background-color: var(--sd-background-color-layer-2);
-        --sd-toolbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.sd-1);
+        --sd-toolbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
         --sd-toolbar-height: 60px;
         --sd-category-border-color: #444950;
         --sd-category-background-color: var(--sd-background-color-layer-2);
@@ -184,7 +184,8 @@
         padding: 25px;
     }
 
-    .static-docs main div a {
+    .static-docs .sd-sidebar a.sd-active,
+    .static-docs .sd-content a {
         color: var(--sd-accent-link-color);
     }
 
