@@ -8,7 +8,7 @@ import { DocumentLink, Links, SideBarConfig } from "./sidebar.js";
 import { VersionConfig } from "./version.js";
 import toolbarTemplate from "./templates/toolbar/index.js";
 import footerTemplate from "./templates/footer/index.js";
-import styleTemplate, { templateVariables as styleTemplateVariables} from "./templates/style/index.js";
+import styleTemplate, { templateVariables as styleTemplateVariables, TemplateVariables as StyleTemplateVaribles} from "./templates/style/index.js";
 import metaTemplate from "./templates/meta/index.js";
 import categoryTemplate from "./templates/category/index.js";
 import frontpageTemplate from "./templates/frontpage/index.js";
@@ -101,6 +101,11 @@ export interface StaticDocsConfig {
      * Links for the toolbar
      */
     toolbarLinks?: Array<ToolbarLink>;
+
+    /**
+     * CSS variable overrides
+     */
+    cssVariables?: Partial<StyleTemplateVaribles>;
 }
 
 export class StaticDocs {
@@ -114,6 +119,7 @@ export class StaticDocs {
     private projectTitle: string;
     private frontpageContent: string;
     private toolbarLinks: Array<ToolbarLink>;
+    private cssVariables: Partial<StyleTemplateVaribles>;
 
     constructor(config: StaticDocsConfig) {
         this.root = config.root;
@@ -126,6 +132,10 @@ export class StaticDocs {
         this.projectTitle = config.projectTitle;
         this.frontpageContent = config.frontpageContent;
         this.toolbarLinks = config.toolbarLinks || [];
+        this.cssVariables = {
+            ...styleTemplateVariables,
+            ...(config.cssVariables || {})
+        }
     }
 
     /**
@@ -151,7 +161,7 @@ export class StaticDocs {
                         githubUrl: this.githubUrl,
                     }),
                     styleTemplate: compiledStyleTemplate(
-                        styleTemplateVariables
+                        this.cssVariables
                     ),
                     toolbarTemplate: compiledToolbarTemplate({
                         projectTitle: this.projectTitle,
@@ -240,7 +250,7 @@ export class StaticDocs {
                 githubUrl: this.githubUrl
             }),
             styleTemplate: compiledStyleTemplate(
-                styleTemplateVariables
+                this.cssVariables
             ),
             metaTemplate: compiledMetaTemplate({
                 baseUrl: this.baseUrl,

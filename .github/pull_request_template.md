@@ -26,6 +26,8 @@ Provide some notes for reviewers to help them provide targeted feedback and test
 - [ ] I have added tests for my changes.
 - [ ] I have tested my changes.
 - [ ] I have updated the project documentation to reflect my changes.
+- [ ] I have bumped the package version.
+- [ ] I have updated the CHANGELOG.md.
 
 ## ⏭ Next Steps
 
