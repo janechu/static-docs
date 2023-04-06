@@ -18,7 +18,7 @@ const template = `<style>
         <%- sdFontFamilyMonospace %>: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         <%- sdBackgroundColorLayer1 %>: #18191a;
         <%- sdBackgroundColorLayer2 %>: #242526;
-        <%- sdBackgroundColorLayer3 %>: hsla(0, 0%, 100%, 0.sd-05);
+        <%- sdBackgroundColorLayer3 %>: hsla(0, 0%, 100%, 0.05);
         <%- sdFooterBackgroundColor %>: #303846;
         <%- sdFooterColor %>: #ebefd0;
         <%- sdFooterHeight %>: 220px;
@@ -35,7 +35,7 @@ const template = `<style>
         <%- sdSidebarLinkActiveBackgroundColor %>: var(<%- sdBackgroundColorLayer3 %>);
         <%- sdSidebarBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
         <%- sdToolbarBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
-        <%- sdToolbarShadow %>: 0 1px 2px 0 rgba(0, 0, 0, 0.sd-1);
+        <%- sdToolbarShadow %>: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
         <%- sdToolbarHeight %>: 60px;
         <%- sdCategoryBorderColor %>: #444950;
         <%- sdCategoryBackgroundColor %>: var(<%- sdBackgroundColorLayer2 %>);
@@ -172,7 +172,8 @@ const template = `<style>
         padding: 25px;
     }
 
-    .static-docs main div a {
+    .static-docs .sd-sidebar a.sd-active,
+    .static-docs .sd-content a {
         color: var(<%- sdAccentLinkColor %>);
     }
 
