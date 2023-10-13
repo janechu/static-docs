@@ -17,6 +17,11 @@ export interface DocumentLink {
      * e.g. "path/to/example"
      */
     path: string;
+
+    /**
+     * Optional paths to js files that should be injected into this document
+     */
+    scripts?: Array<string>;
 }
 
 export interface CategoryLink {
