@@ -1,6 +1,6 @@
 {
   "name": "static-docs",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "A static documentation site generator. Useful for integration with GitHub pages.",
   "main": "dist/esm/index.js",
   "type": "module",

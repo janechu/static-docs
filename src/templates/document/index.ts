@@ -7,6 +7,9 @@ const template = `<!DOCTYPE html>
     <head>
         <%= metaTemplate %> <%=
         styleTemplate %>
+        <% _.forEach(scripts, function(script) { %>
+            <script src="<%- script %>"></script>
+        <% }); %>
     </head>
     <body class="static-docs">
         <div class="sd-mobile-overlay"></div>

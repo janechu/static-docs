@@ -240,6 +240,7 @@ export class StaticDocs {
     ): any {
         return {
             content: html,
+            scripts: (documentationItem as DocumentLink)?.scripts || [],
             toolbarTemplate: compiledToolbarTemplate({
                 baseUrl: this.baseUrl,
                 githubUrl: this.githubUrl,
@@ -330,6 +331,7 @@ export class StaticDocs {
                                 html,
                             ),
                         }),
+                        scripts: documentationItem.scripts
                     };
 
                     fs.ensureDir(path.resolve(this.target, "docs", docFile.path))
