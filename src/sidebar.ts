@@ -22,6 +22,11 @@ export interface DocumentLink {
      * Optional paths to js files that should be injected into this document
      */
     scripts?: Array<string>;
+
+    /**
+     * Optional paths to stylesheet files that should be injected into this document
+     */
+    stylesheets?: Array<string>;
 }
 
 export interface CategoryLink {

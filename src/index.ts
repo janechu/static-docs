@@ -8,7 +8,7 @@ import { DocumentLink, Links, SideBarConfig } from "./sidebar.js";
 import { VersionConfig } from "./version.js";
 import toolbarTemplate from "./templates/toolbar/index.js";
 import footerTemplate from "./templates/footer/index.js";
-import styleTemplate, { templateVariables as styleTemplateVariables, TemplateVariables as StyleTemplateVaribles} from "./templates/style/index.js";
+import styleTemplate, { templateVariables as styleTemplateVariables, TemplateVariables as StyleTemplateVariables} from "./templates/style/index.js";
 import metaTemplate from "./templates/meta/index.js";
 import categoryTemplate from "./templates/category/index.js";
 import frontpageTemplate from "./templates/frontpage/index.js";
@@ -105,7 +105,7 @@ export interface StaticDocsConfig {
     /**
      * CSS variable overrides
      */
-    cssVariables?: Partial<StyleTemplateVaribles>;
+    cssVariables?: Partial<StyleTemplateVariables>;
 }
 
 export class StaticDocs {
@@ -119,7 +119,7 @@ export class StaticDocs {
     private projectTitle: string;
     private frontpageContent: string;
     private toolbarLinks: Array<ToolbarLink>;
-    private cssVariables: Partial<StyleTemplateVaribles>;
+    private cssVariables: Partial<StyleTemplateVariables>;
 
     constructor(config: StaticDocsConfig) {
         this.root = config.root;
@@ -241,6 +241,7 @@ export class StaticDocs {
         return {
             content: html,
             scripts: (documentationItem as DocumentLink)?.scripts || [],
+            stylesheets: (documentationItem as DocumentLink)?.stylesheets || [],
             toolbarTemplate: compiledToolbarTemplate({
                 baseUrl: this.baseUrl,
                 githubUrl: this.githubUrl,
@@ -331,7 +332,8 @@ export class StaticDocs {
                                 html,
                             ),
                         }),
-                        scripts: documentationItem.scripts
+                        scripts: documentationItem.scripts,
+                        stylesheets: documentationItem.stylesheets
                     };
 
                     fs.ensureDir(path.resolve(this.target, "docs", docFile.path))

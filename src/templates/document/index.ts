@@ -10,6 +10,9 @@ const template = `<!DOCTYPE html>
         <% _.forEach(scripts, function(script) { %>
             <script src="<%- script %>"></script>
         <% }); %>
+        <% _.forEach(stylesheets, function(stylesheet) { %>
+            <link href="<%- stylesheet %>" rel="stylesheet">
+        <% }); %>
     </head>
     <body class="static-docs">
         <div class="sd-mobile-overlay"></div>
